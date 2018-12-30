@@ -10,9 +10,9 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#btnSubmit').click(function(){
-                    $.post('controller/GetSession.php', {amount: $('#amount').val(), 
-                                                          shopper_reference: $('#shopperReference').val(), 
-                                                          payment_reference: $('#paymentReference').val()}, function(data){
+                    $.post('/controller/GetSession.php', {amount: $('#amount').val(), 
+                                                          shopperReference: $('#shopper_reference').val(), 
+                                                          paymentReference: $('#payment_reference').val()}, function(data){
                             console.log(JSON.parse(data).paymentSession);
                             initiateCheckout(JSON.parse(data).paymentSession);
                     });

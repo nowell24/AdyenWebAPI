@@ -1,19 +1,18 @@
 <?php
-
 require '../model/Payment.php';
 if (file_exists(__DIR__ . '/../config/authentication.ini')) {
     $authentication = parse_ini_file(__DIR__ . '/../config/authentication.ini', true);
 }
 $pmt = new Payment();
-$amount = $_REQUEST['amount'];
-$shopperRef = $_REQUEST['shopperReference'];
-$paymentRef = $_REQUEST['paymentReference'];
+$amount = $_POST['amount'];
+$shopperRef = $_POST['shopperReference'];
+$paymentRef = $_POST['paymentReference'];
 $data = array(
     'amount' => ['value' => $amount, 'currency' => "USD"],
     'channel' => 'WeB',
     'countryCode' => 'US',
     'shopperReference' => $shopperRef,
-    'shopperLocale' => 'en_US',
+    'shopperLocale' => 'en-US',
     'reference' => $paymentRef,
     'sdkVersion' => $authentication['sdkVersion'],
     'enableOneClick' => 'false',
