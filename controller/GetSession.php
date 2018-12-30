@@ -19,13 +19,13 @@ $data = array(
     'enableRecurring' => 'false',
     'origin' => sprintf(
         "%s://%s%s",
-        isset($_SERVER['HTTPS']) ? 'https' : 'http',
+        'https',
         $_SERVER['SERVER_NAME'],''
       ),
     'shopperIP' => $_SERVER['REMOTE_ADDR'],
     'returnUrl' => sprintf(
         "%s://%s%s",
-        isset($_SERVER['HTTPS']) ? 'https' : 'http',
+        'https',
         $_SERVER['SERVER_NAME'],''
       ),
     'merchantAccount' => $authentication['merchantAccount']
